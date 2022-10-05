@@ -10,19 +10,19 @@ const Navbar = () => {
       <div className={classes.navigation}>
         <img src={logo.src} alt="" />
         <div className={classes.navLinks}>
-          <Link href="/Collections">
+          <Link href="/collections">
             <a>Collections</a>
           </Link>
-          <Link href="/Men">
+          <Link href="/men">
             <a>Men</a>
           </Link>
-          <Link href="/Women">
+          <Link href="/women">
             <a>Women</a>
           </Link>
-          <Link href="/About">
+          <Link href="/about">
             <a>About</a>
           </Link>
-          <Link href="/Contact">
+          <Link href="/contact">
             <a>Contact</a>
           </Link>
         </div>

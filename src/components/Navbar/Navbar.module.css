@@ -1,0 +1,59 @@
+/* -- */
+.navbar {
+  width: 100%;
+  height: 115px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid hsl(220, 14%, 75%);
+  
+  
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+/* -- */
+
+
+/* -------- */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+}
+
+.navLinks a {
+  display: flex;
+  align-items: center;
+  color: hsl(219, 9%, 45%);
+  height: 115px;
+}
+
+.navLinks a:hover {
+  border-bottom: 5px solid hsl(26, 100%, 55%);
+}
+/* -------- */
+
+
+/* ---- */
+.cartProfile {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 50px;
+  border: 2px solid transparent;
+}
+
+.avatar:hover {
+  border: 2px solid hsl(26, 100%, 55%);
+  border-radius: 50%;
+}
+

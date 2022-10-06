@@ -12,23 +12,18 @@ const carousel = [carousel1, carousel2, carousel3, carousel4];
 const Carousel = () => {
   const [translate, setTranslate] = useState(0);
   let i = (translate/100) * -1;
+	let length = carousel.length
   const translateHandler = (direction) => {
-    console.log(i)
-    if (direction === 'right' && i < carousel.length-1 ) {
-      setTranslate(prev => prev-100)
-      console.log("test ", 1)
-
+    if (direction === 'right' && i < length - 1) {
+      setTranslate(prev => prev - 100)
     } else if (direction === 'right') {
-      console.log("test ", 2)
       setTranslate(0);
     }
     else if ((direction === 'left' && i > 0)) {
-      setTranslate(prev => prev+100)
-      console.log("test ", 3)
+      setTranslate(prev => prev + 100)
     }
     else if (direction === 'left') {
-      setTranslate(-100 * (carousel.length-1))
-      console.log("test ", 4)
+      setTranslate(-100 * (length - 1))
     }
   }
   

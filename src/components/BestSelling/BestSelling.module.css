@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.heading {
+  font-weight: 400;
+  color: hsl(219, 9%, 45%);
+}
+
+.viewLink {
+  font-weight: 600;
+  color: rgba(255,149,5,0.1);
+}
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  margin-top: 10px;
+}
+
+
+.productDetails {
+  display: flex;
+}

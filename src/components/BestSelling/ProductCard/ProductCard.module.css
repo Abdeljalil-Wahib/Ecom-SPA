@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  align-items: center;
+  width: 250px;
+  
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 5px 8px 12px 3px rgba(255,149,5,0.1);
+}
+
+.img {
+  width: 200px;
+  height: 300px;
+  object-fit: contain;
+  transition:  0.5s ease-out;
+}
+.img:hover {
+  transform: scale(1.09);
+  transition:  0.3s ease-in;
+}
+
+.productDetails {
+  display: flex;
+  width: 220px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.pdctTitle {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: black;
+}
+
+.pdctPrice {
+  font-weight: 600;
+  
+}
+
+.df {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sizeTxt {
+  font-size: 0.6rem;
+}

@@ -1,0 +1,44 @@
+.container {
+	width: 250px;
+	/* background-color: red; */
+}
+
+.productimage {
+	width: 250px;
+	height: 350px;
+	object-fit: contain;
+}
+
+.productdetails {
+	padding: 5px 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.brand-fav {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.brand {
+	font-size: 14px;
+}
+
+.fav{
+	cursor: pointer;
+}
+
+.itemtitle {
+	width: 100%;
+	font-size: 16px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.price {
+	font-weight: 600;
+	font-size: 14px;
+}

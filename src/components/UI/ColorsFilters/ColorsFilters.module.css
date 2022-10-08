@@ -1,0 +1,18 @@
+.colorswrapper {
+	display: flex;
+	gap: 10px;
+}
+
+.colorwrapper {
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	outline: 1px solid lightgrey;
+	outline-offset: 1.5px;
+	cursor: pointer;
+}
+
+.colorwrapper:hover {
+	outline: 1px solid black;
+	outline-offset: 2px;
+}

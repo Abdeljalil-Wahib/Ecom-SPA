@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  margin-block: 50px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid hsl(220, 14%, 75%);
+}
+
+.h2 {
+  font-weight: 600;
+  font-size: 2em;
+}
+
+.abt {
+  font-weight: 600;
+  
+}
+
+.content {
+  margin-inline: 15px;
+  line-height: 25px;
+}

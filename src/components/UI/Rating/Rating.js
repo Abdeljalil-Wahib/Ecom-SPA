@@ -7,9 +7,9 @@ const Rating = ({rating}) => {
 	let floorrate = Math.floor(rating.rate)
 	for (let i = 0; i < 5; i++) {
 		if (i < floorrate)
-			arr.push(<AiFillStar style = {{width: '20px', height: '20px', color: 'orange'}}/>)
+			arr.push(<AiFillStar key = {i} style = {{width: '20px', height: '20px', color: 'orange'}}/>)
 		else
-			arr.push(<AiOutlineStar style = {{width: '20px', height: '20px'}}/>)
+			arr.push(<AiOutlineStar key = {i} style = {{width: '20px', height: '20px'}}/>)
 	}
 	return (
 		<div className = {classes.ratingswrapper}>

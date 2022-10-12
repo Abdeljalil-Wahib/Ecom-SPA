@@ -10,6 +10,7 @@
 	outline: 1px solid lightgrey;
 	outline-offset: 1.5px;
 	cursor: pointer;
+	position: relative;
 }
 
 .colorwrapper:hover {

@@ -15,10 +15,38 @@
 }
 
 .carousel {
-	/* background-color: red; */
-	display: flex;
-	justify-content: space-around;
+	/* gap: 30px; */
 	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.productswrapper {
+	display: flex;
+	gap: 30px;
+}
+
+.navbtn {
+	height: 100px;
+	width: 50px;
+	position: absolute;
+	top: 40%;
+	opacity: 20%;
+	border: none;
+	cursor: pointer;
+}
+
+.navbtn:hover {
+	opacity: 50%;
+}
+
+.leftbtn {
+	left: 0;
+	z-index: 1;
+}
+
+.rightbtn {
+	right: 0;
 }
 
 .h1 {

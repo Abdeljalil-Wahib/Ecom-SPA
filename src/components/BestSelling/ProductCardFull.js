@@ -4,6 +4,8 @@ import ColorsFilters from '../UI/ColorsFilters/ColorsFilters'
 import Rating from '../UI/Rating/Rating'
 import classes from './ProductCardFull.module.css'
 import {IoIosHeartEmpty} from 'react-icons/io'
+import Button from '../UI/Button/Button'
+import Link from 'next/link'
 
 const DUMMY_COLORS = [
 	{
@@ -21,11 +23,16 @@ const DUMMY_COLORS = [
 const ProductsCardFull = ({item}) => {
 	return (
 		<div className = {classes.container}>
-			<img
-				className = {classes.productimage}
-				src = {item.image}
-				alt = 'product'
-			/>
+			<div className = {classes.imagewrapper}>
+				<img
+					className = {classes.productimage}
+					src = {item.image}
+					alt = 'product'
+				/>
+				<Link href = '' passHref = {true}>
+					<Button href = {''} type = 'a' body = 'Add To Cart' className = {classes.addtocart}/>
+				</Link>
+			</div>
 			<div className = {classes.productdetails}>
 				<div className = {classes['brand-fav']}>
 					<h3 className = {classes.brand}>{item.brand ? item.brand : 'Brand'}</h3>

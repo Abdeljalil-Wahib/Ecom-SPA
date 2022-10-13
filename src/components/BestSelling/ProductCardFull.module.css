@@ -3,10 +3,26 @@
 	/* background-color: red; */
 }
 
+.imagewrapper {
+	position: relative;
+}
+
 .productimage {
 	width: 250px;
 	height: 350px;
 	object-fit: contain;
+}
+
+.addtocart {
+	width: fit-content;
+	cursor: pointer;
+	position: absolute;
+	bottom: 20px;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
 }
 
 .productdetails {

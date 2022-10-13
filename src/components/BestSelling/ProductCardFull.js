@@ -30,7 +30,7 @@ const ProductsCardFull = ({item}) => {
 					alt = 'product'
 				/>
 				<Link href = '' passHref = {true}>
-					<Button href = {''} type = 'a' body = 'Add To Cart' className = {classes.addtocart}/>
+					<Button href = {''} onClick = {() => console.log('test')} type = 'a' body = 'Add To Cart' className = {classes.addtocart}/>
 				</Link>
 			</div>
 			<div className = {classes.productdetails}>

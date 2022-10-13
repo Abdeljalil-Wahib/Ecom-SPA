@@ -2,11 +2,22 @@ import React from 'react'
 import classes from './Button.module.css'
 
 const Button = (props, ref) => {
+	const linkprops = {
+		href: props.href,
+		ref: ref
+	}
+	const buttonprops = {
+		onClick: props.onClick,
+	}
+	const customprops = {
+		className: classes.button + ' ' + props.className,
+		children: props.body,
+		...props.type === 'button' ? {...buttonprops} :
+		props.type === 'a' ? {...linkprops} : {}
+	}
+
 	return (
-		<>
-		{props.type === 'button' ? <props.type onClick = {props.action} className = {classes.button + ' ' + props.className}>{props.body}</props.type> :
-		<props.type href = {props.href} className = {classes.button + ' ' + props.className} ref = {ref}>{props.body}</props.type>}
-		</>
+		<props.type {...customprops} />
 	)
 }
 

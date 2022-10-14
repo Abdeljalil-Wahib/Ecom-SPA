@@ -1,0 +1,12 @@
+.container {
+}
+
+.cartcontainer {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 350px;
+	height: 100%;
+	z-index: 3;
+	background-color: red;
+}

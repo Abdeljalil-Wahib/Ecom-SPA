@@ -29,9 +29,7 @@ const ProductsCardFull = ({item}) => {
 					src = {item.image}
 					alt = 'product'
 				/>
-				<Link href = '' passHref = {true}>
-					<Button href = {''} onClick = {() => console.log('test')} type = 'a' body = 'Add To Cart' className = {classes.addtocart}/>
-				</Link>
+				<Button href = {''} type = 'button' body = 'Add To Cart' className = {classes.addtocart}/>
 			</div>
 			<div className = {classes.productdetails}>
 				<div className = {classes['brand-fav']}>

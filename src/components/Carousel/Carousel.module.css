@@ -15,7 +15,7 @@
 
 .leftBtn {
   position: absolute;
-  z-index: 9999;
+  z-index: 2;
   width: 40px;
   height: 40px;
   background-color: red;
@@ -24,7 +24,7 @@
 
 .rightBtn {
   position: absolute;
-  z-index: 9999;
+  z-index: 2;
   width: 40px;
   height: 40px;
   background-color: red;

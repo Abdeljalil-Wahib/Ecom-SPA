@@ -1,0 +1,46 @@
+.container {
+  margin-block: 60px;
+  padding-top: 50px;
+  border-top: 1px solid hsl(220, 14%, 75%);
+}
+
+.row1,
+.row2 {
+  display: flex;
+}
+
+.spotlight {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.sptlightImg {
+  width: 555px;
+  transition: all 1s;
+}
+
+.sptlightImg:hover {
+  transform: scale(1.2);
+  transition: all 1s;
+}
+
+.txtRepo {
+  color: black;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding-inline: 40px;
+  padding-block: 15px;
+  position: absolute;
+  top: 450px;
+  z-index: 2;
+  transition: all 0.5s;
+}
+
+.txtRepo:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all 0.5s;
+}

@@ -4,7 +4,8 @@ import cart from "../../assets/icon-cart.svg";
 import avatar from "../../assets/image-avatar.png";
 import Link from "next/link";
 
-const Navbar = () => {
+
+const Navbar = ({ClickHandler}) => {
   return (
     <nav className={classes.navbar}>
       <div className={classes.navigation}>
@@ -30,7 +31,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className={classes.cartProfile}>
-        <img className={classes.cart} src={cart.src} alt="" />
+        <img onClick={ClickHandler} className={classes.cart} src={cart.src} alt="" />
         <img className={classes.avatar} src={avatar.src} alt="" />
       </div>
     </nav>

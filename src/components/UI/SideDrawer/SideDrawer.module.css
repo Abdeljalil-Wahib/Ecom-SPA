@@ -1,0 +1,29 @@
+
+.sideDrawer {
+  width: 395px;
+  height: 100%;
+  background-color: white;
+  position: fixed;
+  z-index: 4;
+  right: 0;
+  animation: translateIn 0.5s;
+}
+
+.backdrop {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(35, 35, 35, 0.666);
+  position: fixed;
+  z-index: 3;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+@keyframes translateIn {
+  from   {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

@@ -8,7 +8,9 @@ const Navbar = () => {
   return (
     <nav className={classes.navbar}>
       <div className={classes.navigation}>
-        <img src={logo.src} alt="" />
+				<Link href = "/">
+        	<img style = {{cursor: 'pointer'}} src={logo.src} alt="" />
+				</Link>
         <div className={classes.navLinks}>
           <Link href="/collections">
             <a>Collections</a>

@@ -6,8 +6,8 @@ export default function Home() {
     <>
       <Head>
         <title>E-com</title>
-      </Head>
+      </Head>  
       <Carousel />
-    </>    
+    </>  
   );
 }

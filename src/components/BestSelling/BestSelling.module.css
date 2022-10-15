@@ -17,13 +17,35 @@
   color: rgba(255,149,5,0.1);
 }
 
+.carouselContainer {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
 .carousel {
   display: flex;
-  flex-direction: row;
-  gap: 25px;
   margin-top: 10px;
+  gap: 30px;
+  
 }
 
 .productDetails {
   display: flex;
+}
+
+.navBtn {
+  width: 30px;
+  height: 80px;
+  position: absolute;
+  bottom: 40%;
+  z-index: 2;
+}
+
+.btnLeft {
+  left: 0;
+}
+
+.btnRight {
+  right: 0;
 }

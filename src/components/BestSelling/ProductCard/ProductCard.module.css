@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  align-items: center;
+  width: 250px;
+  flex-direction: column;
+  gap: 10px;
+  
+}
+
+.img {
+  width: 250px;
+  height: 300px;
+  object-fit: contain;
+}
+
+.productDetails {
+  display: flex;
+  width: 220px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.pdctTitle {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: black;
+}
+
+.pdctPrice {
+  font-weight: 600;
+  
+}
+
+.df {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sizeTxt {
+  font-size: 0.6rem;
+}

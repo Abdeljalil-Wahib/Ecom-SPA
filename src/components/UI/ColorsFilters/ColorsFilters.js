@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import classes from './ColorsFilters.module.css'
 
-const ColorsFilters = ({colors}) => {
+const ColorsFilters = ({setAddedProduct, colors}) => {
 	const [current, setCurrent] = useState()
 	const [colorpopup, setColorPopup] = useState()
 
-	const colorHandler = (id) => {
-		setCurrent(id)
+	const colorHandler = (color) => {
+		setCurrent(color.id)
+		setAddedProduct(prev => ({
+			...prev,
+			colorPicked: color
+		}))
 	}
 
 	const popupHandler = (id) => {
@@ -21,8 +25,9 @@ const ColorsFilters = ({colors}) => {
 		<div className = {classes.colorswrapper}>
 			{colors?.map((color, idx) => <div
 				key = {color.id}
+				//the id comparison is wrong
 				style = {{background: color.color, outlineColor: current === idx ? 'black' : 'lightgrey'}}
-				onClick = {() => colorHandler(idx)}
+				onClick = {() => colorHandler(color)}
 				onMouseOver = {() => popupHandler(idx)}
 				onMouseLeave = {() => popupHandler()}
 				className = {classes.colorwrapper}>

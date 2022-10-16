@@ -5,6 +5,8 @@ import Rating from '../UI/Rating/Rating'
 import classes from './ProductCardFull.module.css'
 import {IoIosHeartEmpty} from 'react-icons/io'
 import Button from '../UI/Button/Button'
+import { uiActions } from '../../store/ui-slice'
+import { useDispatch } from 'react-redux'
 
 const DUMMY_COLORS = [
 	{
@@ -20,6 +22,12 @@ const DUMMY_COLORS = [
 ]
 
 const ProductsCardFull = ({item}) => {
+	const dispatch = useDispatch();
+
+	const toggleCartHandler = () => {
+		dispatch(uiActions.toggle())
+	}
+
 	return (
 		<div className = {classes.container} >
 			<div className = {classes.imagewrapper}>
@@ -28,7 +36,7 @@ const ProductsCardFull = ({item}) => {
 					src = {item.image}
 					alt = 'product'
 				/>
-				<Button href = {''} type = 'button' body = 'Add To Cart' className = {classes.addtocart}/>
+				<Button href = {''} type = 'button' onClick = {toggleCartHandler} body = 'Add To Cart' className = {classes.addtocart}/>
 			</div>
 			<div className = {classes.productdetails}>
 				<div className = {classes['brand-fav']}>

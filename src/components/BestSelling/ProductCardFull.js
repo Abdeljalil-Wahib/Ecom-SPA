@@ -5,7 +5,6 @@ import Rating from '../UI/Rating/Rating'
 import classes from './ProductCardFull.module.css'
 import {IoIosHeartEmpty} from 'react-icons/io'
 import Button from '../UI/Button/Button'
-import Link from 'next/link'
 
 const DUMMY_COLORS = [
 	{
@@ -22,7 +21,7 @@ const DUMMY_COLORS = [
 
 const ProductsCardFull = ({item}) => {
 	return (
-		<div className = {classes.container}>
+		<div className = {classes.container} >
 			<div className = {classes.imagewrapper}>
 				<img
 					className = {classes.productimage}

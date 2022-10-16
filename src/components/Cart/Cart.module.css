@@ -1,0 +1,21 @@
+.container {
+}
+
+.cartcontainer {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 420px;
+	height: 100%;
+	padding: 0px 15px;
+	z-index: 3;
+	background-color: wheat;
+	display: flex;
+	flex-direction: column;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

@@ -3,6 +3,11 @@
 	/* background-color: red; */
 }
 
+.container:hover .addtocart{
+	opacity: 1;
+	bottom: 20px;
+}
+
 .imagewrapper {
 	position: relative;
 }
@@ -14,15 +19,14 @@
 }
 
 .addtocart {
+	opacity: 0;
 	width: fit-content;
 	cursor: pointer;
 	position: absolute;
-	bottom: 20px;
+	bottom: 10px;
 	margin: 0 auto;
 	left: 0;
 	right: 0;
-	display: flex;
-	justify-content: center;
 }
 
 .productdetails {

@@ -1,5 +1,11 @@
 .Layout {
   height: 100vh;
-  max-width: 1110px;
+  max-width: 100%;
+  margin: 0 auto;
+	position: relative;
+}
+
+.innerlayout {
+	max-width: 1110px;
   margin: 0 auto;
 }

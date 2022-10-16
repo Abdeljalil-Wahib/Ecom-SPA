@@ -1,28 +1,21 @@
 .container {
 	width: 380px;
 	height: 175px;
-	background-color: lightcoral;
 	padding: 5px;
 	display: flex;
 	gap: 10px;
 }
 
 .imagewrapper {
-	width: 80px;
-	height: 100%;
-	flex: 2;
 }
 
 .image{
-	width: 100%;
+	width: 80px;
 	height: 110px;
-	/* object-fit: contain; */
 }
 
 .detailswrapper {
-	flex: 7;
 	padding: 0 10px;
-	background-color: teal;
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
@@ -35,11 +28,33 @@
 .size-color-editbtn {
 	display: flex;
 	align-items: center;
-	border: 1px solid black;
 }
 
 .editicon {
 	/* width: 15px;
 	height: 15px; */
 	color: grey;
+}
+
+.qty{
+	display: flex;
+	width: 90px;
+	height: 45px;
+	border: 1px solid rgb(197, 195, 195);
+}
+
+.decqty, .incqty {
+	flex: 1;
+	background-color: white;
+	border: none;
+	color: grey;
+	font-size: 22px;
+	cursor: pointer;
+}
+
+.input {
+	flex: 1;
+	min-width: 0px;
+	border: none;
+	text-align: center;
 }

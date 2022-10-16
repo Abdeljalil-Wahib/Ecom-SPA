@@ -10,7 +10,7 @@ const CartProductCard = ({product}) => {
 	}
 
 	const decQtyHandler = () => {
-		if (input > 0)
+		if (input > 1)
 			setInput(prev => +prev - 1)
 	}
 

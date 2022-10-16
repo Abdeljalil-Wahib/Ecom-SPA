@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  gap: 30px;
+}
+
+.pdctInfo {
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.pdctImg {
+  width: 80px;
+  height: 110px;
+}
+
+.itemsQuantity {
+  width: fit-content;
+  display: flex;
+  border: 1px solid black;
+  
+}
+
+.decreaseQtty, 
+.increaseQtty {
+  width: 40px;
+  border: none;
+  background-color: white;
+}
+
+.input {
+ width: 40px;
+ height: 40px;
+ border: none;
+ text-align: center;
+ outline: none;
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

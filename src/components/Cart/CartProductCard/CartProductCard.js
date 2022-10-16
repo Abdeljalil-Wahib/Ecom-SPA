@@ -21,10 +21,10 @@ const CartProductCard = ({product}) => {
 	return (
 		<div className = {classes.container}>
 				<div className = {classes.imagewrapper}>
-					<img className = {classes.image} src = {product?.item?.image} alt = 'product'/>
+					<img className = {classes.image} src = {product?.image} alt = 'product'/>
 				</div>
 				<div className = {classes.detailswrapper}>
-					<h2 className = {classes.producttitle}>{product?.item?.title}</h2>
+					<h2 className = {classes.producttitle}>{product?.title}</h2>
 					<div className = {classes['size-color-editbtn']}>
 						<span className = {classes['size-color']}>S / {product?.colorPicked?.color}</span>
 						<span className = {classes['editbtn']}>

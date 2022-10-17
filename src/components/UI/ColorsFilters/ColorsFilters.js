@@ -1,28 +1,25 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import classes from './ColorsFilters.module.css'
 
-const ColorsFilters = ({colors}) => {
+const ColorsFilters = ({setColors, colors}) => {
 	const [current, setCurrent] = useState()
 	const [colorpopup, setColorPopup] = useState()
 
-	const colorHandler = (id) => {
-		setCurrent(id)
+	const colorHandler = (id, idx) => {
+		setCurrent(idx)
+		setColors(id)
 	}
 
 	const popupHandler = (id) => {
 		setColorPopup(id)
 	}
 
-	// useEffect(() => {
-	// 	return setColorPopup(false)
-	// }, [colorpopup])
-
 	return (
 		<div className = {classes.colorswrapper}>
 			{colors?.map((color, idx) => <div
 				key = {color.id}
 				style = {{background: color.color, outlineColor: current === idx ? 'black' : 'lightgrey'}}
-				onClick = {() => colorHandler(idx)}
+				onClick = {() => colorHandler(color.id, idx)}
 				onMouseOver = {() => popupHandler(idx)}
 				onMouseLeave = {() => popupHandler()}
 				className = {classes.colorwrapper}>

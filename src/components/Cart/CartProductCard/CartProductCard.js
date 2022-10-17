@@ -26,12 +26,14 @@ const CartProductCard = ({product}) => {
 				<div className = {classes.detailswrapper}>
 					<h2 className = {classes.producttitle}>{product?.title}</h2>
 					<div className = {classes['size-color-editbtn']}>
-						<span className = {classes['size-color']}>S / {product?.colorPicked?.color}</span>
+						<span className = {classes['size-color']}>S / 
+						{product?.color}
+						</span>
 						<span className = {classes['editbtn']}>
 							<BiEdit className = {classes.editicon}/>
 						</span>
 					</div>
-					<span>${product?.item?.price}</span>
+					<span>${product?.price}</span>
 					<div className = {classes.qty}>
 						<button className = {classes.decqty} onClick = {decQtyHandler}>-</button>
 						<input type = "text" className = {classes.input} value = {input} onChange = {inputHandler}/>

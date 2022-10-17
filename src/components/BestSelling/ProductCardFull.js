@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react'
+import React, { useState } from 'react'
 import ColorsFilters from '../UI/ColorsFilters/ColorsFilters'
 import Rating from '../UI/Rating/Rating'
 import classes from './ProductCardFull.module.css'
@@ -7,6 +7,7 @@ import {IoIosHeartEmpty} from 'react-icons/io'
 import Button from '../UI/Button/Button'
 import { uiActions } from '../../store/ui-slice'
 import { useDispatch } from 'react-redux'
+import { cartActions } from '../../store/cart-slice'
 
 const DUMMY_COLORS = [
 	{
@@ -23,9 +24,13 @@ const DUMMY_COLORS = [
 
 const ProductsCardFull = ({item}) => {
 	const dispatch = useDispatch();
+	const [chosenColorId, setChosenColor] = useState()
 
 	const toggleCartHandler = () => {
 		dispatch(uiActions.toggle())
+		const chosenColor = DUMMY_COLORS.find(item => item.id === chosenColorId)
+		const chosenItem = {...item, ...chosenColor}
+		dispatch(cartActions.addToCart(chosenItem))
 	}
 
 	return (
@@ -43,7 +48,7 @@ const ProductsCardFull = ({item}) => {
 					<h3 className = {classes.brand}>{item.brand ? item.brand : 'Brand'}</h3>
 					<span className = {classes.fav}><IoIosHeartEmpty style = {{width: '18px', height: '18px'}}/></span>
 				</div>
-				<ColorsFilters colors = {DUMMY_COLORS}/>
+				<ColorsFilters setColors = {setChosenColor} colors = {DUMMY_COLORS}/>
 				<h2 className = {classes.itemtitle}>{item.title}</h2>
 				<span className = {classes.price}>${item.price.toFixed(2)}</span>
 				<Rating rating = {item.rating}/>

@@ -6,7 +6,7 @@ import classes from './ProductCardFull.module.css'
 import {IoIosHeartEmpty} from 'react-icons/io'
 import Button from '../UI/Button/Button'
 import { uiActions } from '../../store/ui-slice'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { cartActions } from '../../store/cart-slice'
 
 const DUMMY_COLORS = [
@@ -24,13 +24,22 @@ const DUMMY_COLORS = [
 
 const ProductsCardFull = ({item}) => {
 	const dispatch = useDispatch();
+	const cartProducts = useSelector(state => state.cart.products)
 	const [chosenColorId, setChosenColor] = useState()
 
 	const toggleCartHandler = () => {
-		dispatch(uiActions.toggle())
-		const chosenColor = DUMMY_COLORS.find(item => item.id === chosenColorId)
-		const chosenItem = {...item, ...chosenColor}
+		const chosenColor = DUMMY_COLORS.find(color => color.id === chosenColorId)?.color
+		const productExists = cartProducts.find(cartItem => cartItem.id === item.id)
+		let chosenItem
+		if (productExists) {
+			chosenItem = {...productExists, quantity: productExists.quantity+1, chosenColor}
+		}
+		else {
+			chosenItem = {...item, quantity: 1, chosenColor}
+		}
 		dispatch(cartActions.addToCart(chosenItem))
+		console.log(cartProducts)
+		dispatch(uiActions.toggle())
 	}
 
 	return (

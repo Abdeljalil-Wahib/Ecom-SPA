@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import {BiEdit} from 'react-icons/bi'
+import { useSelector } from 'react-redux'
 import classes from './CartProductCard.module.css'
 
 const CartProductCard = ({product}) => {
-	const [input, setInput] = useState(1)
+	const [input, setInput] = useState(product.quantity)
 
 	const inputHandler = (e) => {
 		setInput(e.target.value)
@@ -27,7 +28,7 @@ const CartProductCard = ({product}) => {
 					<h2 className = {classes.producttitle}>{product?.title}</h2>
 					<div className = {classes['size-color-editbtn']}>
 						<span className = {classes['size-color']}>S / 
-						{product?.color}
+						{product?.chosenColor}
 						</span>
 						<span className = {classes['editbtn']}>
 							<BiEdit className = {classes.editicon}/>

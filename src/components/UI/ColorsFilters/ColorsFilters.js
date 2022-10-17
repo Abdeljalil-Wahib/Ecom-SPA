@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import classes from './ColorsFilters.module.css'
 
 const ColorsFilters = ({setColors, colors}) => {
@@ -13,6 +13,10 @@ const ColorsFilters = ({setColors, colors}) => {
 	const popupHandler = (id) => {
 		setColorPopup(id)
 	}
+
+	useEffect(() => {
+		setColors(0)
+	}, [])
 
 	return (
 		<div className = {classes.colorswrapper}>

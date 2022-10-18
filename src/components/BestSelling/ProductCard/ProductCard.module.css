@@ -3,8 +3,15 @@
   align-items: center;
   width: 250px;
   flex-direction: column;
-  gap: 10px;
+  gap: 10px; 
   
+}
+
+.imgWrapper {
+  width: 100%;
+  position: relative;
+  display: flex;  
+  justify-content: center;
 }
 
 .img {
@@ -45,9 +52,12 @@
 .addToCartBtn {
   opacity: 0;
   transition: all 0.3s;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 25px;
+  
 }
 
-.addToCartBtn:hover {
+.container:hover .addToCartBtn{
   opacity: 1;
-  transition: all 0.3s;
 }

@@ -22,8 +22,10 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className={classes.container}>
-      <img className={classes.img} src={product.image} alt="" />
-      <Button className={classes.addToCartBtn} type="button" body="ADD TO CART" />
+      <div className={classes.imgWrapper}>
+        <img className={classes.img} src={product.image} alt="" />
+        <Button className={classes.addToCartBtn} type="button" body="ADD TO CART" />
+      </div>
       <div className={classes.productDetails}>
         <Link href="">
           <a className={classes.pdctTitle}>{product.title}</a>

@@ -43,7 +43,7 @@ const Navbar = () => {
           src={cart.src}
           alt=""
         />
-        <span className={classes.pdctsInCart}>{itemsInCart}</span>
+        <span className={classes.pdctsInCart}>{itemsInCart > 0 ? itemsInCart : ''}</span>
         <img className={classes.avatar} src={avatar.src} alt="" />
       </div>
     </nav>

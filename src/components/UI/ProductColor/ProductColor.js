@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import classes from "../ProductColor/ProductColor.module.css";
 
-const ProductColor = ({ colors }) => {
+const ProductColor = ({ colors, setColor }) => {
   const [current, setCurrent] = useState();
   const [hover, setHover] = useState();
   const [showPopup, setShowPopup] = useState(false);
 
-  const clickHandler = (index) => {
+  const clickHandler = (index, id) => {
+    setColor(id);
     setCurrent(index);
   };
 
@@ -39,7 +40,7 @@ const ProductColor = ({ colors }) => {
               background: color.color,
               outlineColor: current === index ? "black" : "lightgray",
             }}
-            onClick={() => clickHandler(index)}
+            onClick={() => clickHandler(index, color.id)}
             onMouseOver={() => mouseEnterHandler(index)}
             onMouseLeave={mouseLeaveHandler}
           />

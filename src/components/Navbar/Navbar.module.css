@@ -47,6 +47,19 @@
   cursor: pointer;
 }
 
+.cart {
+  position: relative;
+}
+
+.pdctsInCart {
+  font-weight: 600;
+  font-size: 1.2rem;
+  position: absolute;
+  color: red;
+  top: 60px;
+  right: 90px;
+}
+
 .avatar {
   width: 50px;
   border: 2px solid transparent;

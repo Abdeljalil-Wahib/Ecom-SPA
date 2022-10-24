@@ -9,7 +9,7 @@ import { IoExit, IoExitOutline, IoTrashBinOutline } from 'react-icons/io5'
 const Cart = () => {
   const dispatch = useDispatch()
   const products = useSelector(state => state.cart.products)
-
+  const totalPrice = useSelector(state => state.cart.totalPrice)
   return (
     <div className={classes.container}>
       <div className={classes.df}>
@@ -19,6 +19,9 @@ const Cart = () => {
       <span className={classes.itemQty}>{}Items</span>
       {products.map((product, idx) => <CartProductCard key = {idx} product={product} />)}
       <hr style={{margin: "15px 0"}}/>
+      <div className={classes.totalPrice}>
+        <span>{+totalPrice.toFixed(2)}</span>
+      </div>
     </div>
   )
 }

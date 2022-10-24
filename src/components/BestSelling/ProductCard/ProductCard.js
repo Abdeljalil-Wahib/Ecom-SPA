@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./ProductCard.module.css";
 import Link from "next/link";
 import ProductColor from "../../UI/ProductColor/ProductColor";
 import Rating from "../../UI/ProductColor/Rating/Rating";
 import Button from "../../UI/Button/Button";
-
+import { useDispatch, useSelector } from "react-redux";
+import { cartActions } from "../../../store/cart-slice";
 
 const ProductCard = ({ product }) => {
+  const [currentColorId, setCurrentColorId] = useState("");
+  const dispatch = useDispatch();
+  const cartProducts = useSelector((state) => state.cart.products);
+
   const colors = [
     {
       color: "black",
@@ -20,18 +25,35 @@ const ProductCard = ({ product }) => {
     },
   ];
 
+  const addProduct = () => {
+    const colorChosen = colors.find(
+      (color) => color.id === currentColorId
+    )?.color;
+    let addedProduct = {
+      ...product,
+      colorChosen,
+    };
+
+    dispatch(cartActions.addProduct(addedProduct));
+  };
+
   return (
     <div className={classes.container}>
       <div className={classes.imgWrapper}>
         <img className={classes.img} src={product.image} alt="" />
-        <Button className={classes.addToCartBtn} type="button" body="ADD TO CART" />
+        <Button
+          onClick={addProduct}
+          className={classes.addToCartBtn}
+          type="button"
+          body="ADD TO CART"
+        />
       </div>
       <div className={classes.productDetails}>
         <Link href="">
           <a className={classes.pdctTitle}>{product.title}</a>
         </Link>
         <div className={classes.df}>
-          <ProductColor colors={colors} />
+          <ProductColor setColor={setCurrentColorId} colors={colors} />
           <span className={classes.sizeTxt}>MORE SIZES AVAILABLE</span>
         </div>
         <span className={classes.pdctPrice}>${product.price}</span>

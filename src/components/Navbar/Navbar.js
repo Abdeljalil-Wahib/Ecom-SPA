@@ -4,11 +4,11 @@ import cart from "../../assets/icon-cart.svg";
 import avatar from "../../assets/image-avatar.png";
 import Link from "next/link";
 import { uiActions } from "../../store/ui-slice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Navbar = () => {
   const dispatch = useDispatch();
-
+  const itemsInCart = useSelector(state => state.cart.totalQuantity)
   const clickHandler = () => {
     dispatch(uiActions.toggleCart());
   };
@@ -43,6 +43,7 @@ const Navbar = () => {
           src={cart.src}
           alt=""
         />
+        <span className={classes.pdctsInCart}>{itemsInCart}</span>
         <img className={classes.avatar} src={avatar.src} alt="" />
       </div>
     </nav>

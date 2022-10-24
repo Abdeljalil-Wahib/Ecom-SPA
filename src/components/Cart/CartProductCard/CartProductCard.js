@@ -7,8 +7,6 @@ import {IoTrashBinOutline} from 'react-icons/io5'
 
 const CartProductCard = ({product}) => {
   const dispatch = useDispatch()
-  const products = useSelector(state => state.cart.products)
-
   const inputHandler = (event) => {
     setItemQuantity(event.target.value);
   }
@@ -27,9 +25,9 @@ const CartProductCard = ({product}) => {
           </span>
         </div>
         <span>S/{product.colorChosen}</span>
-        <span>${product.price.toFixed(2)}</span>
+        <span>${product.price.toFixed(2) * product.quantity}</span>
       <div className={classes.itemsQuantity}>
-        <button onClick={() => dispatch(cartActions.removeProduct(product))}  className={classes.decreaseQtty}>-</button>
+        <button onClick={() => dispatch(cartActions.decreaseProductQty(product))}  className={classes.decreaseQtty}>-</button>
         <input onChange={inputHandler} value={product.quantity} className={classes.input} type="number" />
         <button onClick={() => dispatch(cartActions.addProduct(product))} className={classes.increaseQtty}>+</button>
       </div>

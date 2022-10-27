@@ -27,18 +27,10 @@ const ProductsCardFull = ({item}) => {
 	const cartProducts = useSelector(state => state.cart.products)
 	const [chosenColorId, setChosenColor] = useState()
 
-	const toggleCartHandler = () => {
+	const addToCartHandler = () => {
 		const chosenColor = DUMMY_COLORS.find(color => color.id === chosenColorId)?.color
-		const productExists = cartProducts.find(cartItem => cartItem.id === item.id)
-		let chosenItem
-		if (productExists) {
-			chosenItem = {...productExists, quantity: productExists.quantity+1, chosenColor}
-		}
-		else {
-			chosenItem = {...item, quantity: 1, chosenColor}
-		}
+		let chosenItem = {...item, chosenColor}
 		dispatch(cartActions.addToCart(chosenItem))
-		console.log(cartProducts)
 		dispatch(uiActions.toggle())
 	}
 
@@ -50,7 +42,7 @@ const ProductsCardFull = ({item}) => {
 					src = {item.image}
 					alt = 'product'
 				/>
-				<Button href = {''} type = 'button' onClick = {toggleCartHandler} body = 'Add To Cart' className = {classes.addtocart}/>
+				<Button href = {''} type = 'button' onClick = {() => addToCartHandler(item)} body = 'Add To Cart' className = {classes.addtocart}/>
 			</div>
 			<div className = {classes.productdetails}>
 				<div className = {classes['brand-fav']}>

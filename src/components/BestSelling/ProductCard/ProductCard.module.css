@@ -1,7 +1,7 @@
 .container {
   display: flex;
   align-items: center;
-  width: 250px;
+  width: 255.5px;
   flex-direction: column;
   gap: 10px; 
   
@@ -11,11 +11,11 @@
   width: 100%;
   position: relative;
   display: flex;  
-  justify-content: center;
+  
 }
 
 .img {
-  width: 250px;
+  width: 247px;
   height: 300px;
   object-fit: contain;
 }
@@ -50,10 +50,12 @@
 }
 
 .addToCartBtn {
+  cursor: pointer;
   opacity: 0;
   transition: all 0.3s;
   position: absolute;
   bottom: 0;
+  left: 30px;
   margin-bottom: 25px;
   
 }

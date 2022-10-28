@@ -1,8 +1,9 @@
 import Head from "next/head";
 import Carousel from "../src/components/Carousel/Carousel"
 import BestSelling from "../src/components/BestSelling/BestSelling"
-
-
+import Spotlights from "../src/components/Spotlight/Spotlights";
+import Newsletter from "../src/components/newsletter/Newsletter";
+import Membership from "../src/components/MembershipForm/Membership";
 
 
 export default function Home() {
@@ -13,6 +14,9 @@ export default function Home() {
       </Head>
       <Carousel />
       <BestSelling />
+      <Spotlights />
+      <Membership />
+      <Newsletter />
     </>    
   );
 }

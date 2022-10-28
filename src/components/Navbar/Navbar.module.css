@@ -1,6 +1,7 @@
 /* -- */
 .navbar {
-  width: 100%;
+  width: 1110px;
+  margin: 0 auto;
   height: 115px;
   display: flex;
   align-items: center;
@@ -57,7 +58,7 @@
   position: absolute;
   color: red;
   top: 60px;
-  right: 90px;
+  transform: translate(100%,20%);
 }
 
 .avatar {

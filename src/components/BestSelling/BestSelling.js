@@ -12,7 +12,7 @@ const BestSelling = () => {
 
   useEffect(() => {
     axios
-      .get("https://fakestoreapi.com/products?limit=8")
+      .get("https://fakestoreapi.com/products?limit=12")
       .then((response) => setProducts(response.data))
       .catch((err) => console.log(err));
   }, []);
@@ -21,13 +21,13 @@ const BestSelling = () => {
 
   const leftSlide = () => {
     if (slide < 0) {
-      setSlide(prev => prev + 25);
+      setSlide(prev => prev + 100);
     }
   };
 
   const rightSlide = () => {
-    if ((slide > (-25 * (products.length - 4)))) {
-      setSlide(prev => prev - 25);
+    if ((slide > (-100 * (products.length - 4)))) {
+      setSlide(prev => prev - 100);
     } 
   };
 
@@ -48,7 +48,7 @@ const BestSelling = () => {
           <FaChevronLeft className={classes.chLeft} />
         </button>
         <div
-          style={{ transform: `translateX(${slide}%)` }}
+          style={{ transform: `translateX(${slide}%)`, transition: `all 0.5s`  }}
           className={classes.carousel}
         >
           {products?.map((product) => (

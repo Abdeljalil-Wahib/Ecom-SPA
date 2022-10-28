@@ -1,0 +1,38 @@
+.container {
+  overflow: hidden;
+}
+
+.spotlight {
+  position: relative;
+}
+
+.spotlightImg {
+  width: 555px;
+  transition: all 1s;
+  display: block;
+}
+
+.spotlightImg:hover {
+  transform: scale(1.2);
+  transition: all 1s;
+}
+
+.txtRepo {
+  position: absolute;
+  color: black;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding-inline: 40px;
+  padding-block: 15px;
+  z-index: 2;
+  transition: all 0.5s;
+  cursor: pointer;
+  bottom: 40px;
+  right: 28%;
+}
+
+.txtRepo:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all 0.5s;
+}

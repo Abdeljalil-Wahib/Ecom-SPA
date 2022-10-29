@@ -8,6 +8,11 @@ const uiSlice = createSlice({
   reducers: {
     toggleCart(state) {
       state.cartVisible = !state.cartVisible;
+      if (state.cartVisible === false) {
+        document.body.style.overflow = "unset";
+      } else {
+        document.body.style.overflowY = "hidden";
+      }
     },
   },
 });

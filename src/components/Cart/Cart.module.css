@@ -1,15 +1,17 @@
 .container {
+  height: 460px;
   padding: 30px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
+  overflow-y: scroll;
 }
 
 .heading {
   font-weight: 600;
 }
 
-.closeBtn svg{
+.closeBtn svg {
   cursor: pointer;
   width: 50px;
   height: 20px;

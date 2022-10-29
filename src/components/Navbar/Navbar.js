@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const itemsInCart = useSelector(state => state.cart.totalQuantity)
+  const itemsInCart = useSelector((state) => state.cart.totalQuantity);
   const clickHandler = () => {
     dispatch(uiActions.toggleCart());
   };
@@ -43,7 +43,9 @@ const Navbar = () => {
           src={cart.src}
           alt=""
         />
-        <span className={classes.pdctsInCart}>{itemsInCart > 0 ? itemsInCart : ''}</span>
+        <span className={classes.pdctsInCart}>
+          {itemsInCart > 0 ? itemsInCart : ""}
+        </span>
         <img className={classes.avatar} src={avatar.src} alt="" />
       </div>
     </nav>

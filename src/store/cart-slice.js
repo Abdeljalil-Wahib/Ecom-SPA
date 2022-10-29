@@ -11,42 +11,57 @@ const cartSlice = createSlice({
     addProduct(state, action) {
       let addedProduct = {
         ...action.payload,
-        quantity: action.payload.quantity ? action.payload.quantity + 1 : 1
-      }
+        quantity: action.payload.quantity ? action.payload.quantity + 1 : 1,
+      };
 
-      let qty = 1;
-      state.products = [
-        ...state.products.filter((item) => {
-          if (item.id === action.payload.id) {
-            qty = item.quantity + 1
-          }
-          return (item.id !== action.payload.id)
-        }), {...addedProduct, quantity: qty},
-      ];
-      state.totalQuantity += 1
-      state.totalPrice += action.payload.price
+      const pdctFound = state.products.find(
+        (item) =>
+          item.id === action.payload.id &&
+          item.colorChosen === action.payload.colorChosen
+      );
+
+      pdctFound
+        ? pdctFound.quantity++
+        : (state.products = [addedProduct, ...state.products]);
+
+      state.totalQuantity += 1;
+      state.totalPrice += action.payload.price;
     },
 
     decreaseProductQty(state, action) {
-      const productFound = state.products.find(product => product.id === action.payload.id)
+      const productFound = state.products.find(
+        (product) =>
+          product.id === action.payload.id &&
+          product.colorChosen === action.payload.colorChosen
+      );
 
-      if(productFound?.quantity > 1) {
-        productFound.quantity -= 1
+      if (productFound?.quantity > 1) {
+        productFound.quantity -= 1;
+      } else {
+        state.products = [
+          ...state.products.filter(
+            (product) =>
+              product.id !== productFound.id ||
+              product.colorChosen !== productFound.colorChosen
+          ),
+        ];
       }
-      else {
-        state.products = [...state.products.filter(product => product.id !== productFound.id)]
-      }
-      state.totalQuantity -= 1
-      state.totalPrice -= action.payload.price
+      state.totalQuantity -= 1;
+      state.totalPrice -= action.payload.price;
     },
 
     removeProduct(state, action) {
-      let total = action.payload.quantity
-      state.products = [...state.products.filter(product => product.id !== action.payload.id)];
+      let total = action.payload.quantity;
+      state.products = [
+        ...state.products.filter(
+          (product) =>
+            product.id !== action.payload.id ||
+            product.colorChosen !== action.payload.colorChosen
+        ),
+      ];
       state.totalQuantity -= total;
-      state.totalPrice -= action.payload.price * total
-    }
-
+      state.totalPrice -= action.payload.price * total;
+    },
   },
 });
 

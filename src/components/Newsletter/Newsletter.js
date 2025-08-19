@@ -8,7 +8,7 @@ const Newsletter = () => {
       <h2 className={classes.heading}>Sign-up for our Newsletter</h2>
       <p className={classes.para}>
         Stay informed about the latest style advice and product launches. Learn
-        more about our emails and our <Link href=""><a className={classes.underline}>Privacy Policy</a></Link>.
+        more about our emails and our <Link href="" className={classes.underline}>Privacy Policy</Link>.
       </p>
       <form className={classes.formField}>
         <input className={classes.inputField} type="email" placeholder="enter your email adress" required/>

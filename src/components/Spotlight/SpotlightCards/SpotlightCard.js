@@ -14,8 +14,7 @@ const SpotlightCard = ({ image, btnText, index }) => {
         />
         <Link href="/collections">
           <Button
-            href="/collections"
-            type={"a"}
+            type={"button"}
             body={btnText}
             className={classes.txtRepo}
           />

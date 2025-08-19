@@ -6,7 +6,7 @@ import carousel2 from "../../assets/Carousel/carousel2.jpeg";
 import {
   BsFillArrowLeftCircleFill,
   BsFillArrowRightCircleFill,
-} from "react-icons/Bs";
+} from "react-icons/bs";
 
 const carousel = [carousel1, carousel2];
 

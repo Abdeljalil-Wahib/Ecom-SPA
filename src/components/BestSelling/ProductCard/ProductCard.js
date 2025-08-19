@@ -49,8 +49,8 @@ const ProductCard = ({ product }) => {
         />
       </div>
       <div className={classes.productDetails}>
-        <Link href="">
-          <a className={classes.pdctTitle}>{product.title}</a>
+        <Link href="" className={classes.pdctTitle}>
+          {product.title}
         </Link>
         <div className={classes.df}>
           <ProductColor setColor={setCurrentColorId} colors={colors} />

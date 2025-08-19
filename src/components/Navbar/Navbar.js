@@ -19,20 +19,20 @@ const Navbar = () => {
           <img style={{ cursor: "pointer" }} src={logo.src} alt="" />
         </Link>
         <div className={classes.navLinks}>
-          <Link href="/collections">
-            <a>Collections</a>
+          <Link href="">
+            Collections
           </Link>
-          <Link href="/men">
-            <a>Men</a>
+          <Link href="">
+            Men
           </Link>
-          <Link href="/women">
-            <a>Women</a>
+          <Link href="">
+            Women
           </Link>
-          <Link href="/about">
-            <a>About</a>
+          <Link href="">
+            About
           </Link>
-          <Link href="/contact">
-            <a>Contact</a>
+          <Link href="">
+            Contact
           </Link>
         </div>
       </div>

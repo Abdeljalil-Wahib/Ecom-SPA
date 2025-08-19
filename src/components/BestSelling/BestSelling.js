@@ -34,8 +34,8 @@ const BestSelling = () => {
   return (
     <div className={classes.container}>
       <h1 className={classes.heading}>Best Selling</h1>
-      <Link href="/bestselling">
-        <a className={classes.viewLink}>VIEW ALL</a>
+      <Link href="/bestselling" className={classes.viewLink}>
+        VIEW ALL
       </Link>
       <div className={classes.carouselContainer}>
         <button
